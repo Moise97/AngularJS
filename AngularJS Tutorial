@@ -19,3 +19,9 @@
 		9.Model View Whatever - MvW is a design pattern for dividing an application into different parts called Model, View, and Controller, each with distincts responsibilities.
 		10.Deep Linking - Deep linking allows to encode the state of application in the URL so that it can be bookmarked. The application can then be restored from the URL to the same state.
 		11.Dependency Injection - AngularJS has a built-in dependency injection subsystem that helps the developer to create, understand, and test the application easily.	
+
+	Directives
+		1. ng-app - This directive start an Angular application.
+		2. ng-init - This directives initializes applications data.
+		3. ng-model - This directive defines the model that is variable to be used in AngularJs
+		4. ng-repeat - This directive repear HTML elements for each item in a collection.
