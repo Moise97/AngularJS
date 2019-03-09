@@ -1,0 +1,21 @@
+					AngularJS Tutorial
+
+	AngularJS is a very powerful JavaScript Framework. It is used in Single Page Application(SPA) projects. It extends HTML DOM with additional attributes and makes it more responsive to user actions. 
+
+	General Features
+		AngularJs is a efficient framework that can create Rich Internet Applications(RIA).
+		AngularJs provides developers an option to write client side applications using JavaScript in clean Model View Controller(MVC) way.
+		Applications written in AngularJS are cross-browser compliant. AngularJS automatically handles JavaScript code suitable for each browser.
+
+	Core Features
+		1.Data-binding - It is the automatic synchronization of data between model and view components.
+		2.Scope - These are objects that refer to the model. they act as a glue between controller and view.
+		3.Controller - These are JavaScript functions bound to a particular scope.
+		4.Services - AngularJS comes with several build-in services such as $http to make a XMLHttpRequests. There are singleton objects witch are instantiated only once in app.
+		5.Filters - These select a subset of items from an array and return a new array.
+		6.Directives - Directives are makers on DOM elements such as elements, attributes, css, and more. These can be used to create custom HTML tags that serve as new custom widget. AngularJS has built-in directives such as ngBind, ngModel, etc.
+		7.Templates - These are the rendered view with information from the controller and model. These can be a single file(such as index.html) or multiple views in one page using partials.
+		8.Routing - It is the concept of switching viewers.
+		9.Model View Whatever - MvW is a design pattern for dividing an application into different parts called Model, View, and Controller, each with distincts responsibilities.
+		10.Deep Linking - Deep linking allows to encode the state of application in the URL so that it can be bookmarked. The application can then be restored from the URL to the same state.
+		11.Dependency Injection - AngularJS has a built-in dependency injection subsystem that helps the developer to create, understand, and test the application easily.	
