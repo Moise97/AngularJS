@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Notepad</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body ng-app="notepadApplication" ng-controller="notepadController">
+	
+	<textarea style="background-color:lightgray;" ng-model="message" cols="190" rows="36"></textarea>
+
+	<p align="center">
+		<button ng-click="save()">Save</button>
+		<button ng-click="clear()">Clear</button>
+	</p>
+
+	<script src="notepadApp.js"></script>
+	<script src="notepadCtrl.js"></script>
+
+</body>
+</html>

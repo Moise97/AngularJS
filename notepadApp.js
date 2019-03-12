@@ -1,0 +1,1 @@
+var notepadApp = angular.module('notepadApplication', []);
