@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AngularJS Dependency Injection</title>
+	<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+	<h2>Dependency Injection in AngularJS</h2>
+
+	<div ng-app = "mainApp" ng-controller = 'calculatorController'>
+		<p>Enter a number: <input type="number" ng-model='number'></p>
+		<button ng-click="square()">X<sup>2</sup></button>
+		<p>Result: {{result}}</p>
+	</div>
+
+	<script type="text/javascript">
+		var myApp = angular.module('mainApp',[]);
+
+		/* PROVIDER is used in AngularJS internally to create services, factory, etc. during
+		the config phase. Provider is a special factory method with get() method which is used 
+		to return the value/service/factory. */
+
+		mainApp.config(function($provide){
+			$provide.provider('MathService', function(){
+				this.$get = function(){
+					var factory = {};
+					factory.multiply = function(a, b){
+						return a * b;
+					}
+					return factory;	
+				};
+			});
+		});
+
+		/* CONSTANTS are used to pass values at the config phase considering the fact that 
+		value cannot be used during the config phase */ 
+
+		mainApp.value("defaultinput", 5);
+
+		/* FACTORY is a service witch is used to return value. It creates a value on demand whenewer 
+		a service or a controller requires it. It generally uses a factory function to calculate and 
+		return a value */
+
+		mainApp.factory('MathService', function(){
+			var factory = {};
+			factory.multiply = function(a, b){
+				return a * b;
+			}
+			return factory;
+		});
+
+		/* SERVICE is a singleton Javascript object containing a set of function to perform certain tasks.
+		Service is defined using service() function and it is injected into the controllers. */
+
+		mainApp.service('calculatorService', function('MathService'){
+			this.square = function(a){
+				return MathService.multiply(a, a);
+			}
+		});
+
+		/* CONTROLLER is a JavaScript object taht contains attributes/properties, and functions.
+		Each controller accepts $scope as a parameter, witch refer to the application/module that the
+		controller needs to handle */
+
+		mainApp.controller('calculatorController', function($scope, calculatorService, defaultinput){
+			$scope.number = defaultinput;
+			$scope.result = calculatorService.square($scope.number);
+			$scope.square function(){
+				$scope.result = calculatorService.square($scope.number);
+			} 
+		});
+
+	</script>
+</body>
+</html>
