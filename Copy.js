@@ -1,3 +1,10 @@
+/*          ///// COPY /////
+
+    Creates a deep copy of source, which should be an object or an array. 
+    This functions is used internally, mostly in the change-detection code. 
+    It is not intended as an all-purpose copy function, and has several limitations
+*/
+
 (function(angular) {
     'use strict';
     // Module: copyExample
